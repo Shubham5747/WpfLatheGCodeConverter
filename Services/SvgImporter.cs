@@ -9,11 +9,11 @@ namespace WpfLatheGCodeConverter.Services
         public GeometryModel Import(string svgPath)
         {
             var doc = XDocument.Load(svgPath);
-            XNamespace ns = doc.Root.Name.Namespace;
+            XNamespace ns = doc.Root?.Name.Namespace ?? XNamespace.None;
             var gm = new GeometryModel();
             foreach (var el in doc.Descendants(ns + "path"))
             {
-                var d = (string)el.Attribute("d");
+                var d = (string?)el.Attribute("d");
                 if (string.IsNullOrWhiteSpace(d)) continue;
                 var pts = SimplePathParse(d);
                 if (pts.Count > 0) gm.Polylines.Add(pts);
