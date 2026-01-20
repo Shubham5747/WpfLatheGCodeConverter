@@ -1,0 +1,97 @@
+﻿<Window x:Class="WpfLatheGCodeConverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Lathe G-code Converter" Height="700" Width="1100">
+    <Grid Margin="8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="8"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Left panel: Files, Tools, Job Settings -->
+        <StackPanel Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+            <TextBlock FontSize="16" FontWeight="Bold" Margin="0,0,0,8">Files &amp; Tools</TextBlock>
+
+            <!-- Import + Diagnostics + file type selector -->
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                <Button Content="Import File" Width="120" Command="{Binding ImportFileCommand}" />
+                <Button Content="Diagnostics" Width="120" Margin="8,0,0,0" Command="{Binding ShowDiagnosticsCommand}" />
+                <Button Content="Test EzDxf" Width="120" Margin="8,0,0,0" Click="BtnTestEz_Click" />
+                <ComboBox Width="180" Margin="8,0,0,0" SelectedIndex="0">
+                    <ComboBoxItem>Auto</ComboBoxItem>
+                    <ComboBoxItem>SVG</ComboBoxItem>
+                    <ComboBoxItem>DXF</ComboBoxItem>
+                    <ComboBoxItem>PNG/JPG</ComboBoxItem>
+                    <ComboBoxItem>STEP</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+
+            <TextBlock FontWeight="Bold" Margin="0,8,0,4">Tool Library</TextBlock>
+            <ListBox ItemsSource="{Binding Tools}" SelectedItem="{Binding SelectedTool}" DisplayMemberPath="DisplayText" Height="120"/>
+            <StackPanel Orientation="Horizontal" Margin="0,6,0,12">
+                <Button Content="Add Tool" Width="90" Command="{Binding AddToolCommand}" />
+                <Button Content="Edit" Width="70" Margin="8,0,0,0" Command="{Binding EditToolCommand}" />
+                <Button Content="Remove" Width="70" Margin="8,0,0,0" Command="{Binding RemoveToolCommand}" />
+            </StackPanel>
+
+            <TextBlock FontWeight="Bold" Margin="0,8,0,4">Job Settings</TextBlock>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Width="120" VerticalAlignment="Center">Units</TextBlock>
+                <ComboBox SelectedItem="{Binding Units}" Width="160">
+                    <ComboBoxItem>mm</ComboBoxItem>
+                    <ComboBoxItem>inch</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Width="120" VerticalAlignment="Center">Scale</TextBlock>
+                <TextBox Text="{Binding Scale}" Width="160"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Width="120" VerticalAlignment="Center">Default Feed (F)</TextBlock>
+                <TextBox Text="{Binding DefaultFeed}" Width="160"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Width="120" VerticalAlignment="Center">Default Spindle (S)</TextBlock>
+                <TextBox Text="{Binding DefaultSpindle}" Width="160"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Width="120" VerticalAlignment="Center">Safe Retract (Z)</TextBlock>
+                <TextBox Text="{Binding SafeZ}" Width="160"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Width="120" VerticalAlignment="Center">Depth per pass</TextBlock>
+                <TextBox Text="{Binding DepthPerPass}" Width="160"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,12">
+                <Button Content="Generate G-code" Width="150" Command="{Binding GenerateGCodeCommand}" />
+                <Button Content="Save G-code" Width="120" Margin="8,0,0,0" Command="{Binding SaveGCodeCommand}" />
+            </StackPanel>
+        </StackPanel>
+
+        <GridSplitter Grid.Column="1" Width="6" />
+
+        <!-- Right panel: Preview and Simulation controls -->
+        <Border Grid.Column="2" BorderBrush="Gray" BorderThickness="1" Padding="6">
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,6">
+                    <Button Content="Play" Width="70" Command="{Binding SimulatePlayCommand}" />
+                    <Button Content="Pause" Width="70" Margin="6,0,0,0" Command="{Binding SimulatePauseCommand}" />
+                    <TextBlock Margin="12,4,0,0">Speed</TextBlock>
+                    <Slider Width="180" Minimum="0.1" Maximum="5" Value="{Binding SimulateSpeed}" TickFrequency="0.1" Margin="6,0,0,0"/>
+                </StackPanel>
+
+                <Grid>
+                    <Canvas x:Name="CanvasPreview" Background="White"/>
+                </Grid>
+            </DockPanel>
+        </Border>
+    </Grid>
+</Window>
