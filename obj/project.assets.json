@@ -580,7 +580,7 @@
     ]
   },
   "packageFolders": {
-    "/home/runner/.nuget/packages/": {}
+    "/home/runner/work/WpfLatheGCodeConverter/.codeql-scratch/dbs/csharp/working/packages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -588,7 +588,7 @@
       "projectUniqueName": "/home/runner/work/WpfLatheGCodeConverter/WpfLatheGCodeConverter/WpfLatheGCodeConverter.csproj",
       "projectName": "WpfLatheGCodeConverter",
       "projectPath": "/home/runner/work/WpfLatheGCodeConverter/WpfLatheGCodeConverter/WpfLatheGCodeConverter.csproj",
-      "packagesPath": "/home/runner/.nuget/packages/",
+      "packagesPath": "/home/runner/work/WpfLatheGCodeConverter/.codeql-scratch/dbs/csharp/working/packages",
       "outputPath": "/home/runner/work/WpfLatheGCodeConverter/WpfLatheGCodeConverter/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
@@ -643,6 +643,18 @@
         "assetTargetFallback": true,
         "warn": true,
         "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.22, 8.0.22]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[8.0.22, 8.0.22]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.22, 8.0.22]"
+          },
           {
             "name": "Microsoft.WindowsDesktop.App.Ref",
             "version": "[8.0.22, 8.0.22]"
