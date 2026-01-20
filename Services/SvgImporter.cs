@@ -8,16 +8,36 @@ namespace WpfLatheGCodeConverter.Services
     {
         public GeometryModel Import(string svgPath)
         {
-            var doc = XDocument.Load(svgPath);
-            XNamespace ns = doc.Root.Name.Namespace;
             var gm = new GeometryModel();
-            foreach (var el in doc.Descendants(ns + "path"))
+            
+            if (string.IsNullOrWhiteSpace(svgPath))
+                return gm;
+            
+            try
             {
-                var d = (string)el.Attribute("d");
-                if (string.IsNullOrWhiteSpace(d)) continue;
-                var pts = SimplePathParse(d);
-                if (pts.Count > 0) gm.Polylines.Add(pts);
+                var doc = XDocument.Load(svgPath);
+                if (doc.Root == null)
+                    return gm;
+                    
+                XNamespace ns = doc.Root.Name.Namespace;
+                
+                foreach (var el in doc.Descendants(ns + "path"))
+                {
+                    var dAttr = el.Attribute("d");
+                    if (dAttr == null) continue;
+                    
+                    var d = dAttr.Value;
+                    if (string.IsNullOrWhiteSpace(d)) continue;
+                    
+                    var pts = SimplePathParse(d);
+                    if (pts.Count > 0) gm.Polylines.Add(pts);
+                }
             }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("SVG import failed: " + ex.Message);
+            }
+            
             return gm;
         }
 
