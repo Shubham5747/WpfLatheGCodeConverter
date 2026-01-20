@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "dgSpecHash": "rjM6mDOlsig=",
+  "success": true,
+  "projectFilePath": "/home/runner/work/WpfLatheGCodeConverter/WpfLatheGCodeConverter/WpfLatheGCodeConverter.csproj",
+  "expectedPackageFiles": [
+    "/home/runner/work/WpfLatheGCodeConverter/.codeql-scratch/dbs/csharp/working/packages/excss/4.2.3/excss.4.2.3.nupkg.sha512",
+    "/home/runner/work/WpfLatheGCodeConverter/.codeql-scratch/dbs/csharp/working/packages/harfbuzzsharp/7.3.0.2/harfbuzzsharp.7.3.0.2.nupkg.sha512",
+    "/home/runner/work/WpfLatheGCodeConverter/.codeql-scratch/dbs/csharp/working/packages/harfbuzzsharp.nativeassets.macos/7.3.0.2/harfbuzzsharp.nativeassets.macos.7.3.0.2.nupkg.sha512",
+    "/home/runner/work/WpfLatheGCodeConverter/.codeql-scratch/dbs/csharp/working/packages/harfbuzzsharp.nativeassets.win32/7.3.0.2/harfbuzzsharp.nativeassets.win32.7.3.0.2.nupkg.sha512",
+    "/home/runner/work/WpfLatheGCodeConverter/.codeql-scratch/dbs/csharp/working/packages/netdxf/2022.11.2/netdxf.2022.11.2.nupkg.sha512",
+    "/home/runner/work/WpfLatheGCodeConverter/.codeql-scratch/dbs/csharp/working/packages/shimskiasharp/2.0.0/shimskiasharp.2.0.0.nupkg.sha512",
+    "/home/runner/work/WpfLatheGCodeConverter/.codeql-scratch/dbs/csharp/working/packages/skiasharp/2.88.8/skiasharp.2.88.8.nupkg.sha512",
+    "/home/runner/work/WpfLatheGCodeConverter/.codeql-scratch/dbs/csharp/working/packages/skiasharp.harfbuzz/2.88.8/skiasharp.harfbuzz.2.88.8.nupkg.sha512",
+    "/home/runner/work/WpfLatheGCodeConverter/.codeql-scratch/dbs/csharp/working/packages/skiasharp.nativeassets.macos/2.88.8/skiasharp.nativeassets.macos.2.88.8.nupkg.sha512",
+    "/home/runner/work/WpfLatheGCodeConverter/.codeql-scratch/dbs/csharp/working/packages/skiasharp.nativeassets.win32/2.88.8/skiasharp.nativeassets.win32.2.88.8.nupkg.sha512",
+    "/home/runner/work/WpfLatheGCodeConverter/.codeql-scratch/dbs/csharp/working/packages/svg.custom/2.0.0/svg.custom.2.0.0.nupkg.sha512",
+    "/home/runner/work/WpfLatheGCodeConverter/.codeql-scratch/dbs/csharp/working/packages/svg.model/2.0.0/svg.model.2.0.0.nupkg.sha512",
+    "/home/runner/work/WpfLatheGCodeConverter/.codeql-scratch/dbs/csharp/working/packages/svg.skia/2.0.0/svg.skia.2.0.0.nupkg.sha512",
+    "/home/runner/work/WpfLatheGCodeConverter/.codeql-scratch/dbs/csharp/working/packages/microsoft.netcore.app.ref/8.0.22/microsoft.netcore.app.ref.8.0.22.nupkg.sha512",
+    "/home/runner/work/WpfLatheGCodeConverter/.codeql-scratch/dbs/csharp/working/packages/microsoft.windowsdesktop.app.ref/8.0.22/microsoft.windowsdesktop.app.ref.8.0.22.nupkg.sha512",
+    "/home/runner/work/WpfLatheGCodeConverter/.codeql-scratch/dbs/csharp/working/packages/microsoft.aspnetcore.app.ref/8.0.22/microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512",
+    "/home/runner/work/WpfLatheGCodeConverter/.codeql-scratch/dbs/csharp/working/packages/microsoft.netcore.app.host.linux-x64/8.0.22/microsoft.netcore.app.host.linux-x64.8.0.22.nupkg.sha512"
+  ],
+  "logs": []
+}
