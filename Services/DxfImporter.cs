@@ -650,7 +650,7 @@ namespace WpfLatheGCodeConverter.Services
         private List<(double X, double Y)>? ParseLineEntity(string[] lines, ref int index)
         {
             double x1 = 0, y1 = 0, x2 = 0, y2 = 0;
-            bool hasStart = false, hasEnd = false;
+            bool hasX1 = false, hasY1 = false, hasX2 = false, hasY2 = false;
             
             while (index < lines.Length)
             {
@@ -662,15 +662,15 @@ namespace WpfLatheGCodeConverter.Services
                 
                 if (code == "0") { index--; break; } // next entity
                 
-                if (code == "10" && double.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out x1)) hasStart = true;
-                else if (code == "20" && double.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out y1)) hasStart = true;
-                else if (code == "11" && double.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out x2)) hasEnd = true;
-                else if (code == "21" && double.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out y2)) hasEnd = true;
+                if (code == "10" && double.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out x1)) hasX1 = true;
+                else if (code == "20" && double.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out y1)) hasY1 = true;
+                else if (code == "11" && double.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out x2)) hasX2 = true;
+                else if (code == "21" && double.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out y2)) hasY2 = true;
                 
                 index++;
             }
             
-            if (hasStart && hasEnd)
+            if (hasX1 && hasY1 && hasX2 && hasY2)
                 return new List<(double X, double Y)> { (x1, y1), (x2, y2) };
             return null;
         }
